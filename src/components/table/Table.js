@@ -22,15 +22,15 @@ export class Table extends ExcelComponent {
       // const $parent = $resizer.$el.closest('.column'); // better but bad
       const $parent = $resizer.closest('[data-type="resizable"]');
       const coords = $parent.getCoords();
-      console.log($parent.data);
+
+      const cells = this.$root.findAll(`[data-col="${$parent.data.col}"]`);
 
       document.onmousemove = (e) => {
+        console.log('mousemove');
         const delta = e.pageX - coords.right;
         const value = coords.width + delta;
         $parent.$el.style.width = value + 'px';
-        document
-          .querySelectorAll(`[data-col="${$parent.data.col}"]`)
-          .forEach((el) => (el.style.width = value + 'px'));
+        cells.forEach((el) => (el.style.width = value + 'px'));
       };
 
       document.onmouseup = () => {
@@ -39,3 +39,10 @@ export class Table extends ExcelComponent {
     }
   }
 }
+
+// 324 msScripting
+// 2362 msRendering
+// 627 msPainting
+// 477 msSystem
+// 1194 msIdle
+// 4984 msTotal
