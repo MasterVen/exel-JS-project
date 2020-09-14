@@ -60,7 +60,9 @@ class Dom {
     return this.$el.querySelectorAll(selector);
   }
   //
-  css(styles = {}) {}
+  css(styles = {}) {
+    Object.keys(styles).forEach((key) => (this.$el.style[key] = styles[key]));
+  }
 }
 
 // event.target
