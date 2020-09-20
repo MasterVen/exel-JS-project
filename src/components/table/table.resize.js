@@ -14,7 +14,6 @@ export function resizeHandler($root, event) {
   });
 
   document.onmousemove = (e) => {
-    git;
     if (type === 'col') {
       const delta = e.pageX - coords.right;
       value = coords.width + delta;
