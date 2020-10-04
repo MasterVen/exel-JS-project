@@ -10,7 +10,8 @@
     "require-jsdoc": "off",
     "operator-linebreak": "off",
     "indent": "off",
-    "space-before-function-paren": "off"
+    "space-before-function-paren": "off",
+    "no-debugger": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
