@@ -11,7 +11,8 @@
     "operator-linebreak": "off",
     "indent": "off",
     "space-before-function-paren": "off",
-    "no-debugger": "off"
+    "no-debugger": "off",
+    "arrow-parens": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }

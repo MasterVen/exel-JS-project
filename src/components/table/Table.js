@@ -36,7 +36,7 @@ export class Table extends ExcelComponent {
 
     this.selectCell(this.$root.find('[data-id="0:0"]'));
 
-    this.$on('formula:input', (text) => {
+    this.$on('formula:input', text => {
       this.selection.current.text(text);
       this.updateTextInStore(text);
     });
@@ -44,10 +44,6 @@ export class Table extends ExcelComponent {
     this.$on('formula:done', () => {
       this.selection.current.focus();
     });
-
-    // this.$subscribe((state) => {
-    //   console.log('TableState', state);
-    // });
   }
 
   selectCell($cell) {
@@ -70,7 +66,7 @@ export class Table extends ExcelComponent {
     } else if (isCell(event)) {
       const $target = $(event.target);
       if (event.shiftKey) {
-        const $cells = matrix($target, this.selection.current).map((id) =>
+        const $cells = matrix($target, this.selection.current).map(id =>
           this.$root.find(`[data-id="${id}"]`)
         );
         this.selection.selectGroup($cells);
