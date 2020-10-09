@@ -1,7 +1,7 @@
 import { $ } from '@core/dom';
 
 export function resizeHandler($root, event) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     const $resizer = $(event.target);
     const $parent = $resizer.closest('[data-type="resizable"]');
     const coords = $parent.getCoords();
@@ -14,7 +14,7 @@ export function resizeHandler($root, event) {
       [sideProp]: '-5000px',
     });
 
-    document.onmousemove = (e) => {
+    document.onmousemove = e => {
       if (type === 'col') {
         const delta = e.pageX - coords.right;
         value = coords.width + delta;
@@ -42,7 +42,7 @@ export function resizeHandler($root, event) {
         });
         $root
           .findAll(`[data-col="${$parent.data.col}"]`)
-          .forEach((el) => (el.style.width = value + 'px'));
+          .forEach(el => (el.style.width = value + 'px'));
       } else {
         $parent.css({ height: value + 'px' });
       }
