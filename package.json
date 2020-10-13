@@ -4,7 +4,8 @@
   "description": "Pure JS Exel App",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest -watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --fix",
     "build": "cross-env NODE_ENV=production webpack --mode production"
   },
@@ -36,10 +37,12 @@
     "copy-webpack-plugin": "^6.1.0",
     "cross-env": "^7.0.2",
     "css-loader": "^4.2.2",
-    "eslint": "^7.8.1",
+    "eslint": "^7.11.0",
     "eslint-config-google": "^0.14.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-jest": "^24.1.0",
     "html-webpack-plugin": "^4.4.1",
+    "jest": "^26.5.3",
     "mini-css-extract-plugin": "^0.11.0",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.2",
